@@ -154,3 +154,65 @@ else:
 output_file = open(file_name, 'wb')
 pickle.dump(d, output_file)
 output_file.close()
+
+a = 0
+while a<3:
+    print (a, end=' ') # Acabamos con espacios en lugar de salto de línea
+    a += 1 # Equivalente a: a = a + 1
+
+print (a) # Estamos fuera del while
+print('Hemos salido fuera del while')
+
+# 0 1 2 3 
+# Hemos salido fuera del while
+
+# BREAK
+a = 5
+while a: # Utilizamos la propia variable como condición
+    print (a, end=' ')
+    if a == 2 :
+        break
+    a -= 1
+
+print ('\nFuera del Bucle.')
+print('Valor de "a": {}'.format(a))
+
+#5 4 3 
+#Fuera del Bucle.
+
+# CONTINUE
+a = 7
+while bool(a):
+    a -= 1
+    if a % 2 == 0 :
+        continue # Saltamos a la siguiente iteracción si es a es par.
+    print (a, end=' ')
+
+print ('\nFuera del Bucle.')
+
+#5 3 1
+#Fuera del Bucle.
+
+# PASS
+a = 5
+while a:
+    pass # Presiona Ctrl-C para abortar la ejecución
+    print (a)
+    break #Rompe el while
+
+# ELSE
+a = 13
+b = a // 2 # División entera. P. ej. 13 // 2 == 6
+
+while b > 1:
+    if a % b == 0: # % es el operador resto. P. ej. 10 % 5 == 0
+        print('{b} es factor de {a}'.format(b,a)) # OJO DA ERROR EN LA EJECUCIÓN
+        break
+    b -= 1
+else:
+    print('{} es primo'.format(a))
+
+print ('\nFuera del Bucle.')
+
+#13 es primo
+#Fuera del Bucle.
